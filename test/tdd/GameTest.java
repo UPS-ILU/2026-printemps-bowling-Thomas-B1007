@@ -2,6 +2,8 @@ package tdd;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Iterator;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -59,5 +61,14 @@ class GameTest {
 		game.roll(4);
 		plusieursRolls(16, 0);
 		assertEquals(24, game.score());
+	}
+	
+	@Test
+	void iter7Test() {
+		int[] tabRoll = {1, 2, 10, 0, 10, 4, 2, 0, 10, 6, 2, 0, 10, 6, 4, 8, 2, 2, 7};
+		for (int i = 0; i < tabRoll.length; i++) {
+			game.roll(tabRoll[i]);
+		}
+		assertEquals(122, game.score());
 	}
 }
