@@ -51,4 +51,13 @@ class GameTest {
 		plusieursRolls(17, 0);
 		assertEquals(18, game.score());
 	}
+	
+	@Test
+	void iter6Test() {
+		game.roll(10);
+		game.roll(3);
+		game.roll(4);
+		plusieursRolls(16, 0);
+		assertEquals(24, game.score());
+	}
 }
